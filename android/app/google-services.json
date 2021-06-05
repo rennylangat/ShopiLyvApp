@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "796188036711",
+    "project_id": "shopapp-3917e",
+    "storage_bucket": "shopapp-3917e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:796188036711:android:013959e39af3c384efcec2",
+        "android_client_info": {
+          "package_name": "com.example.shopapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "796188036711-9sv2nqcij3clghsfcg4ke2i777ke53eo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMtwA9j7d3ygKGIq4_Ux9pWO5jsTua4Yw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "796188036711-9sv2nqcij3clghsfcg4ke2i777ke53eo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:796188036711:android:648a80bd1a804423efcec2",
+        "android_client_info": {
+          "package_name": "com.renny.shopapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "796188036711-9sv2nqcij3clghsfcg4ke2i777ke53eo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMtwA9j7d3ygKGIq4_Ux9pWO5jsTua4Yw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "796188036711-9sv2nqcij3clghsfcg4ke2i777ke53eo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
