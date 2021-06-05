@@ -32,6 +32,9 @@ class _BodyState extends State<Body> {
       child: StreamBuilder<QuerySnapshot>(
         stream: inventory,
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          items = snapshot.data.docs;
+
+          print(snapshot.data.docs[0]["name"]);
           return new Padding(
               padding: EdgeInsets.symmetric(horizontal: 14),
               child: Column(
@@ -104,7 +107,7 @@ class _BodyState extends State<Body> {
                             leading: null,
                             title: Row(
                               children: <Widget>[
-                                Expanded(child: Text(items[index]["itemName"])),
+                                Expanded(child: Text(items[index]["name"])),
                                 Expanded(
                                     child: Text(
                                   items[index]["desc"].toString(),
@@ -115,7 +118,7 @@ class _BodyState extends State<Body> {
                                 )),
                                 Expanded(
                                     child: Text(
-                                  "Kes " + items[index]["sPrice"].toString(),
+                                  "Kes " + items[index]["price"].toString(),
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontFamily: "Muli",
