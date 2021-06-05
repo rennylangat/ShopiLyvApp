@@ -1,4 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shopapp/screens/home/home_screen.dart';
 import 'package:shopapp/size_config.dart';
 
 import 'login/login.dart';
@@ -15,6 +18,13 @@ class _WrapperState extends State<Wrapper> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Login();
+    final user = Provider.of<User>(context);
+    if (user.uid != null) {
+      return HomeScreen(
+        uID: user.uid,
+      );
+    } else {
+      return Login();
+    }
   }
 }

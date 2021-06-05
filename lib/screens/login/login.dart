@@ -16,45 +16,53 @@ class Login extends StatelessWidget {
     SizeConfig().init(context);
     return Scaffold(
         body: SafeArea(
-          child: SingleChildScrollView(
+      child: Center(
+        child: SingleChildScrollView(
+          child: Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Container(color: Colors.white,),
-              SizedBox(
-                height: getProportionateScreenHeight(25),
-              ),
-              Text(
-                "Welcome to the Shop App. Login to continue",
-                style: TextStyle(
-                    fontSize: getProportionateScreenHeight(20),
-                    color: Colors.black),
-              ),
-              SizedBox(
-                height: getProportionateScreenHeight(20),
-              ),
-              MaterialButton(
-                  color: Colors.blueAccent,
-                  onPressed: () async {
-                    await _loginProvider.sigIn(context: context);
-                    final user = Provider.of<User>(context);
-                    if (user.uid != null) {
-                      Navigator.of(context).pushAndRemoveUntil(
-                          MaterialPageRoute(
-                              builder: (context) => HomeScreen(uID: user.uid)),
-                          (route) => false);
-                    }
-                  },
-                  child: Text(
-                    "Login with Google",
+                  Container(
+                    color: Colors.white,
+                  ),
+                  SizedBox(
+                    height: getProportionateScreenHeight(25),
+                  ),
+                  Text(
+                    "Welcome to the Shop App. Login to continue",
                     style: TextStyle(
-                      fontSize: getProportionateScreenHeight(18),
-                      color: Colors.red,
-                    ),
-                  ))
-            ]),
+                        fontSize: getProportionateScreenHeight(20),
+                        color: Colors.black),
+                  ),
+                  SizedBox(
+                    height: getProportionateScreenHeight(20),
+                  ),
+                  MaterialButton(
+                      color: Colors.blue.shade50,
+                      onPressed: () async {
+                        await _loginProvider.sigIn(context: context);
+                        final user = Provider.of<User>(context, listen: false);
+                        if (user.uid != null) {
+                          print(user.uid);
+                          Navigator.of(context).pushAndRemoveUntil(
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      HomeScreen(uID: user.uid)),
+                              (route) => false);
+                        }
+                      },
+                      child: Text(
+                        "Login with Google",
+                        style: TextStyle(
+                          fontSize: getProportionateScreenHeight(18),
+                          color: Colors.red,
+                        ),
+                      ))
+                ]),
           ),
-        ));
+        ),
+      ),
+    ));
   }
 }

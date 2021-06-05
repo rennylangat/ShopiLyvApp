@@ -36,9 +36,12 @@ class _BodyState extends State<Body> {
               padding: EdgeInsets.symmetric(horizontal: 14),
               child: Column(
                 children: [
+                  SizedBox(
+                    height: getProportionateScreenHeight(30),
+                  ),
                   Text("Inventory",
                       style: TextStyle(
-                          fontSize: getProportionateScreenHeight(20),
+                          fontSize: getProportionateScreenHeight(36),
                           color: Colors.black)),
                   SizedBox(
                     height: getProportionateScreenHeight(20),
@@ -143,7 +146,7 @@ class _BodyState extends State<Body> {
                                                     SingleItemScreen()));
                                       },
                                       icon: Icon(
-                                        Icons.edit,
+                                        Icons.shopping_cart_outlined,
                                         color: Colors.blue,
                                       )),
                                 ),

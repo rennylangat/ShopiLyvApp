@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _init = Firebase.initializeApp();
-    SizeConfig().init(context);
     return FutureBuilder(
         future: _init,
         builder: (context, snapshot) {
@@ -34,7 +33,7 @@ class MyApp extends StatelessWidget {
                     value: AuthServices().user, initialData: null)
               ],
               child: MaterialApp(
-                debugShowCheckedModeBanner: false,
+                  debugShowCheckedModeBanner: false,
                   title: 'Shop App',
                   initialRoute: "/wrapper",
                   routes: routes,
@@ -44,7 +43,7 @@ class MyApp extends StatelessWidget {
                   home: Login()),
             );
           } else {
-            return null;
+            return new Login();
           }
         });
   }
