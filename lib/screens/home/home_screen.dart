@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopapp/screens/cart/cart_screen.dart';
 
 import 'components/body.dart';
 
@@ -20,6 +21,18 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: null,
       body: Body(),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => CartScreen()));
+        },
+        label: const Text(
+          "View Cart",
+          style: TextStyle(
+            fontFamily: "Muli",
+          ),
+        ),
+      ),
     );
   }
 }

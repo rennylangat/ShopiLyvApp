@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopapp/screens/cart/components/body.dart';
 
 class SingleItemScreen extends StatefulWidget {
   static String routeName="/single_item";
@@ -11,6 +12,8 @@ class SingleItemScreen extends StatefulWidget {
 class _SingleItemScreenState extends State<SingleItemScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Body(),
+    );
   }
 }
