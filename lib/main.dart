@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shopapp/components/auth_services.dart';
 import 'package:shopapp/routes.dart';
+import 'package:shopapp/screens/login/login.dart';
 import 'package:shopapp/screens/wrapper.dart';
+import 'package:shopapp/size_config.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,6 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _init = Firebase.initializeApp();
+    SizeConfig().init(context);
     return FutureBuilder(
         future: _init,
         builder: (context, snapshot) {
@@ -31,13 +34,14 @@ class MyApp extends StatelessWidget {
                     value: AuthServices().user, initialData: null)
               ],
               child: MaterialApp(
+                debugShowCheckedModeBanner: false,
                   title: 'Shop App',
                   initialRoute: "/wrapper",
                   routes: routes,
                   theme: ThemeData(
                     primarySwatch: Colors.blue,
                   ),
-                  home: Wrapper()),
+                  home: Login()),
             );
           } else {
             return null;

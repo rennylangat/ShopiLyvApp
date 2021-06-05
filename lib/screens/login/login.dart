@@ -13,11 +13,15 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _loginProvider = Provider.of<AuthServices>(context);
+    SizeConfig().init(context);
     return Scaffold(
-        appBar: null,
         body: SafeArea(
           child: SingleChildScrollView(
-            child: Column(children: [
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(color: Colors.white,),
               SizedBox(
                 height: getProportionateScreenHeight(25),
               ),

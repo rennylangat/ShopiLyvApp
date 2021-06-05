@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SingleItemScreen extends StatefulWidget {
+  static String routeName="/single_item";
   const SingleItemScreen({Key key}) : super(key: key);
 
   @override
